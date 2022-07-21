@@ -1,0 +1,32 @@
+<%- include('partials/snrheader') %>
+
+<div class="admin-check-main">
+
+<h1 class="academic-one">Questions Came</h1>
+<hr style="height:2px;background-color:black;width:50%;text-align:center;">
+
+
+    <!-- <a class="btn btn-dark btn-lg" href="/jnrback" role="button">Back</a> -->
+    <div class="academic-three">
+  <%questionsList.forEach(junior => {%>
+    <form action="/deletejnr" method="post">
+      <div class="a-t-one">
+        <input type="checkbox" name="checkbox">
+        </div>
+        <!-- <h1> Topic :- <%= junior.title %></h1>
+        <h3> Question:- <%= junior.question %></h3> -->
+        <div class="a-t-two">
+
+            <p style="font-size:25px;"> Topic :-   <%= junior.title %>
+            </p>
+            <p style="font-size:22px;">Question :   <%= junior.question %></p>
+      </div>
+        <button type="submit" name="button" value="<%=junior._id%>">Delete</button>
+    </form>
+    <hr style="height:2px;background-color:black;width:50%;text-align:center;">
+  <%})%>
+
+</div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+
+    <!-- <a class="btn btn-dark btn-lg" href="/" role="button">Home</a> -->
+    <div class="jnrs-main-div">
+      <h1 class="academic-one">Academic Answers</h1>
+      <hr style="height:2px;background-color:black;width:40%;text-align:center;">
+    </div>
+
+<div class="club-user">
+
+
+    <%questionsList.forEach(user => {%>
+        <!-- <h1><%= user.question %></h1> -->
+        <button class="accordion"><%= user.question %></button>
+        <!-- <h3><%= user.answer %></h3> -->
+        <div class="panel">
+          <p>Ans:)<%= user.answer %></p>
+        </div>
+    <%})%>
+
+    <hr>
+  </div>
+
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
+<%- include('partials/footer') %>

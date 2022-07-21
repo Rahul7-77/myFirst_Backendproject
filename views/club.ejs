@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+
+<div class="jnrs-main-div">
+<h1 class="academic-one">Co-Curricular Answers</h1>
+<hr style="height:2px;background-color:black;width:40%;text-align:center;">
+</div>
+
+    <!-- <a class="btn btn-dark btn-lg" href="/" role="button">Home</a> -->
+    <button class="accordion">How are the clubs in NITC?</button>
+    <div class="panel">
+      <p>Ans:)  At present, there are 11 well-known cultural clubs. All these clubs host events regularly to keep the 'cultural' spirits of our campus high. Apart from this, there are numerous technical clubs and interest groups. More details about each club can be found <a href="https://thenitconnect.wordpress.com/2015/06/13/260/">here</a>. Inductions into these clubs will occur towards the end of your first year. Stay Tuned!</p>
+    </div>
+    <div class="club-user">
+
+
+    <%questionsList.forEach(club => {%>
+        <!-- <h1><%= club.question %></h1> -->
+       <button class="accordion"><%= club.question %></button>
+        <!-- <h3><%= club.answer %></h3> -->
+        <div class="panel">
+          <p>Ans:)  <%= club.answer %></p>
+        </div>
+    <%})%>
+
+    </div>
+
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+    </script>
+
+
+<%- include('partials/footer') %>

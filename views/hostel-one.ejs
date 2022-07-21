@@ -1,0 +1,51 @@
+<%- include('partials/snrheader') %>
+
+<div class="admin-check-main">
+
+  <div class="jnrs-main-div">
+        <h1 class="academic-one">Add Campus Life questions and Answers</h1>
+        <hr style="height:2px;background-color:black;width:50%;text-align:center;">
+      </div>
+
+        <div class="academic-two">
+          <div class="academic-two-links">
+          <a class="give-ans" href="/hostel-submit" role="button">Add a question</a>
+          <a class="give-ans" href="/logout" role="button">Log out</a>
+          <a class="give-ans" href="/jnrback" role="button">Back</a>
+          </div>
+        </div>
+        <div class="academic-three">
+          <ol>
+
+    <%questionsList.forEach(hostel => {%>
+
+      <form action="/deletehostel" method="post">
+        <div class="a-t-one">
+          <input type="checkbox" name="checkbox">
+          </div>
+        <!-- <h1><%= hostel.question %></h1>
+        <h3><%= hostel.answer %></h3> -->
+        <div class="a-t-two">
+
+            <li style="font-size:24px;"><%= hostel.question %>
+            </li>
+
+      <p class="ans-p">Ans)<%= hostel.answer %></p>
+      </div>
+      <div class="a-t-three">
+        <button type="submit" name="button" value="<%=hostel._id%>">Delete</button>
+      </div>
+    </form>
+    <hr style="height:2px;background-color:black;width:50%;text-align:center;">
+    <%})%>
+
+</ol>
+</div>
+
+    <!-- <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a> -->
+    <!-- <a class="btn btn-dark btn-lg" href="/hostel-submit" role="button">Add a question</a>
+    <a class="btn btn-dark btn-lg" href="/logout" role="button">Log out</a>
+    <a class="btn btn-dark btn-lg" href="/jnrback" role="button">Back</a> -->
+</div>
+
+<%- include('partials/footer') %>

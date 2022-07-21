@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+
+    <h1 class="submit-one">New Question?</h1>
+<p style="text-align:center;font-size:20px;">Ask us here.</p>
+<div class="jnr-askqn">
+
+    <form action="/junior" method="POST">
+
+      <div class="hii">
+        <!-- <input type="text" class="form-control text-center" name="title" placeholder="What's the topic?"> -->
+        <input type="text" class="jnr-topic" name="title" placeholder="What's the topic?">
+        <textarea class="ans-textarea" type="text" name="question" rows="7" cols="30" placeholder="Type your question here."></textarea>
+        <!-- <input type="text" class="form-control text-center" name="question" placeholder="What's your question?"> -->
+      </div>
+      <!-- <button type="submit" class="btn btn-dark">Submit</button> -->
+      <button type="submit" class="ans-button">Submit</button>
+    </form>
+  </div>
+
+
+
+<%- include('partials/footer') %>

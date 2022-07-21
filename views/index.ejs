@@ -1,0 +1,69 @@
+<%- include('partials/header') %>
+
+
+
+<!-- <a class="btn btn-dark btn-lg" href="/register" role="button">Only for admins Login(LnD)</a>
+<h1>Literary and Debating Club</h1>
+ <a class="btn btn-dark btn-lg" href="/junior" role="button">Add a question</a> -->
+ <div class="home-heading">
+   <div class="heading-one">
+  <h1>NITCandid</h1>
+  <hr class="heading-decoration">
+  <p class="heading-text"><i>an initiative by the <a class="heading-link"href="https://www.lndnitc.org/">Literary and Debating Club</a></i></p>
+</div>
+ </div>
+ <div class="two">
+   <div class="two-one">
+  <!-- <h1>NITCandid</h1>
+  <hr class="two-decoration">
+  <p>an initiative by the <a class="two-link"href="https://www.lndnitc.org/">Literary and Debating Club</a></p> -->
+  <img class="illustration"src="images/illustration.jpeg" alt="illustration">
+  <a class="ask" href="/junior" role="button">Ask Away</a>
+  </div>
+  <div class="two-two">
+    <p>
+      <!-- NITCandid is a novel initiative to spark talks about the more unexplored aspects of college and college life to the B21's and coming years. This was all started with the sole idea of bringing the warmth of campus, the caw of crows, and the cool breezes at <some well known street at campus> to you, at the comforts of your own homes. You can expect to find uncensored answers to your wildest questions, but be mindful to keep decent boundaries. -->
+      NITCandid is a fresh initiative by The Literary & Debating Club aimed at sparking conversations about topics that aren't generally discussed in a conventional campus setting. Along with addressing your doubts, we also intend to help bridge the gap between freshers and seniors in this online scenario. You can resolve your queries on a wide variety of subjects, ranging from academic tips to hostel rules to the best places to eat in Calicut to unwritten campus rules and campus slang. Even the wildest of your questions aren’t off limits, but be mindful to keep decent boundaries.
+      </p>
+  </div>
+ </div>
+
+<div class="three">
+
+<h1 class="three-one">FAQ </h1>
+<!-- <button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div> -->
+
+
+
+<%questionsList.forEach(faq => {%>
+    <button class="accordion"><%= faq.question %></button>
+    <div class="panel">
+      <p>Ans:)<%= faq.answer %></p>
+    </div>
+    <!-- <h3> Ans:)<%= faq.answer %></h3> -->
+<%})%>
+
+
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
+<%- include('partials/footer') %>

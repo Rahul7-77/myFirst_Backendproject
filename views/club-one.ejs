@@ -1,0 +1,47 @@
+<%- include('partials/snrheader') %>
+
+<div class="admin-check-main">
+  <div class="jnrs-main-div">
+<h1 class="academic-one">Add Clubs questions and Answers</h1>
+<hr style="height:2px;background-color:black;width:50%;text-align:center;">
+</div>
+
+<div class="academic-two">
+  <div class="academic-two-links">
+  <a class="give-ans" href="/club-submit" role="button">Add a question</a>
+  <a class="give-ans" href="/logout" role="button">Log out</a>
+  <a class="give-ans" href="/jnrback" role="button">Back</a>
+  </div>
+</div>
+<div class="academic-three">
+  <ol>
+
+    <%questionsList.forEach(club => {%>
+      <form action="/deleteclub" method="post">
+        <div class="a-t-one">
+          <input type="checkbox" name="checkbox">
+          </div>
+        <!-- <h1><%= club.question %></h1>
+        <h3><%= club.answer %></h3> -->
+        <div class="a-t-two">
+            <li style="font-size:20px;margin-left:-5%;"><%= club.question %>
+            </li>
+      <p class="ans-p">Ans)<%= club.answer %></p>
+      </div>
+      <div class="a-t-three">
+        <button type="submit" name="button" value="<%=club._id%>">Delete</button>
+        </div>
+    </form>
+    <hr style="height:2px;background-color:black;width:50%;text-align:center;">
+    <%})%>
+</ol>
+</div>
+
+
+    <!-- <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a> -->
+    <!-- <a class="btn btn-dark btn-lg" href="/club-submit" role="button">Add a question</a>
+    <a class="btn btn-dark btn-lg" href="/logout" role="button">Log out</a>
+    <a class="btn btn-dark btn-lg" href="/jnrback" role="button">Back</a> -->
+
+
+<%- include('partials/footer') %>
