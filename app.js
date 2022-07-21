@@ -17,11 +17,11 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(session({
-  secret: 'This is NITCandid done by LND peeps.',
-  resave: false,
-  saveUninitialized: false
-}))
+// app.use(session({
+//   secret: 'This is NITCandid done by LND peeps.',
+//   resave: false,
+//   saveUninitialized: false
+// }))
 
 mongoose.connect("mongodb://localhost:27017/notquoraDB",{useNewUrlParser: true});
 // mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser:true});
